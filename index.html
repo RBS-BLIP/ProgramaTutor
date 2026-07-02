@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Programa de Tutoria</title>
+
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header class="header">
+      <h1>Programa de Tutoria</h1>
+      <p>Registro de acompanhamento</p>
+    </header>
+
+    <div class="form">
+
+      <div class="field">
+        <label for="tutor">Tutor</label>
+        <input type="text" id="tutor" placeholder="Digite nome ou matrícula">
+        <div id="tutor-suggestions" class="suggestions"></div>
+      </div>
+
+      <div class="field">
+        <label for="tutorado">Tutorado</label>
+        <input type="text" id="tutorado" placeholder="Digite nome ou matrícula">
+        <div id="tutorado-suggestions" class="suggestions"></div>
+      </div>
+
+      <div class="field">
+        <label for="data">Data</label>
+        <input type="date" id="data">
+      </div>
+
+      <div class="field">
+        <label for="area">Área</label>
+        <input type="text" id="area" placeholder="Ex: Manutenção Mecânica">
+      </div>
+
+      <div class="field">
+        <label for="obs">Observações</label>
+        <textarea id="obs" rows="4"></textarea>
+      </div>
+
+      <button id="salvar">Salvar</button>
+
+    </div>
+
+  </div>
+
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/search.js"></script>
+
+</body>
+</html>
