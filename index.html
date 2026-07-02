@@ -1,59 +1,135 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Programa de Tutoria</title>
 
-  <link rel="stylesheet" href="assets/css/style.css"/>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <header class="header">
-      <h1>Programa de Tutoria</h1>
-      <p>Registro de acompanhamento</p>
-    </header>
+  <!-- CABEÇALHO -->
+  <header class="header">
+    <h1>Programa de Tutoria</h1>
+    <p>Registro de Segurança, Meio Ambiente e Performance</p>
+  </header>
 
-    <div class="form">
+  <!-- ========================= -->
+  <!-- ETAPA 1 - IDENTIFICAÇÃO -->
+  <!-- ========================= -->
+  <div class="step active" id="step-1">
 
-      <div class="field">
-        <label for="tutor">Tutor</label>
-        <input type="text" id="tutor" placeholder="Digite nome ou matrícula">
-        <div id="tutor-suggestions" class="suggestions"></div>
-      </div>
+    <h3>Identificação</h3>
 
-      <div class="field">
-        <label for="tutorado">Tutorado</label>
-        <input type="text" id="tutorado" placeholder="Digite nome ou matrícula">
-        <div id="tutorado-suggestions" class="suggestions"></div>
-      </div>
+    <label>Tutor</label>
+    <input type="text" id="tutor" placeholder="Nome ou matrícula">
 
-      <div class="field">
-        <label for="data">Data</label>
-        <input type="date" id="data">
-      </div>
+    <label>Tutorado</label>
+    <input type="text" id="tutorado" placeholder="Nome ou matrícula">
 
-      <div class="field">
-        <label for="area">Área</label>
-        <input type="text" id="area" placeholder="Ex: Manutenção Mecânica">
-      </div>
+    <label>Data</label>
+    <input type="date" id="data">
 
-      <div class="field">
-        <label for="obs">Observações</label>
-        <textarea id="obs" rows="4"></textarea>
-      </div>
+    <label>Área</label>
+    <input type="text" id="area">
 
-      <button id="salvar">Salvar</button>
+    <label>Função / Atividade</label>
+    <input type="text" id="atividade">
 
-    </div>
+    <button onclick="nextStep()">Próximo</button>
 
   </div>
 
-  <script src="assets/js/app.js"></script>
-  <script src="assets/js/search.js"></script>
+  <!-- ========================= -->
+  <!-- ETAPA 2 - SEGURANÇA -->
+  <!-- ========================= -->
+  <div class="step" id="step-2">
+
+    <h3>Segurança e Risco</h3>
+
+    <label>Tipo de Atividade</label>
+    <select id="tipo">
+      <option>Manutenção corretiva</option>
+      <option>Manutenção preventiva</option>
+      <option>Inspeção</option>
+      <option>Operação</option>
+      <option>Outro</option>
+    </select>
+
+    <label>Nível de Risco</label>
+    <select id="risco">
+      <option>Baixo</option>
+      <option>Médio</option>
+      <option>Alto</option>
+      <option>Crítico</option>
+    </select>
+
+    <label>Permissão de Trabalho</label>
+    <select id="pt">
+      <option>Sim</option>
+      <option>Não</option>
+    </select>
+
+    <label>EPIs Utilizados</label>
+    <input type="text" id="epis">
+
+    <label>Procedimento de Segurança</label>
+    <select id="procedimento">
+      <option>Sim</option>
+      <option>Não</option>
+      <option>Parcial</option>
+    </select>
+
+    <label>Descrição de Risco Identificado</label>
+    <input type="text" id="risco_desc">
+
+    <button onclick="prevStep()">Voltar</button>
+    <button onclick="nextStep()">Próximo</button>
+
+  </div>
+
+  <!-- ========================= -->
+  <!-- ETAPA 3 - AVALIAÇÃO -->
+  <!-- ========================= -->
+  <div class="step" id="step-3">
+
+    <h3>Avaliação de Desempenho</h3>
+
+    <!-- AVALIAÇÃO DINÂMICA -->
+    <div id="avaliacao-container"></div>
+
+    <br>
+
+    <label>Tema da Orientação</label>
+    <input type="text" id="tema">
+
+    <label>Nível de Entendimento</label>
+    <select id="entendimento">
+      <option>Baixo</option>
+      <option>Médio</option>
+      <option>Alto</option>
+    </select>
+
+    <label>Observações</label>
+    <textarea id="obs" rows="4"></textarea>
+
+    <br>
+
+    <button onclick="prevStep()">Voltar</button>
+    <button id="salvar">Salvar Registro</button>
+
+  </div>
+
+</div>
+
+<!-- SCRIPTS -->
+<script src="assets/js/search.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/avaliacao.js"></script>
 
 </body>
 </html>
